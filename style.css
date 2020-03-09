@@ -1,6 +1,6 @@
 body, .clock, .hr,
 .mn,
-.sc, .numbers {
+.sc {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,7 +36,8 @@ body {
     height: 15px;
     background: #8899a6;
     border-radius: 50%;
-    z-index: 100; }
+    z-index: 100;
+    border: 2px solid #292F33; }
 
 .numbers,
 .hour,
@@ -110,19 +111,73 @@ body {
       line-height: 1.5em;
       font-size: 2em;
       color: #8899a6; }
+      .numbers ul li::before, .numbers ul li::after {
+        content: '';
+        width: 2px;
+        height: 14px;
+        background: #8899a6;
+        position: absolute; }
       .numbers ul li:first-child {
         top: 0;
         left: 50%;
         margin-left: -0.75em; }
+        .numbers ul li:first-child::before {
+          top: 30px;
+          right: 90px;
+          -webkit-transform: rotate(-30deg);
+          -ms-transform: rotate(-30deg);
+          transform: rotate(-30deg); }
+        .numbers ul li:first-child::after {
+          top: 30px;
+          left: 90px;
+          -webkit-transform: rotate(30deg);
+          -ms-transform: rotate(30deg);
+          transform: rotate(30deg); }
       .numbers ul li:nth-child(2) {
         top: 50%;
         right: 0;
         margin-top: -0.75em; }
+        .numbers ul li:nth-child(2)::before {
+          top: 85px;
+          right: 40px;
+          -webkit-transform: rotate(-60deg);
+          -ms-transform: rotate(-60deg);
+          transform: rotate(-60deg); }
+        .numbers ul li:nth-child(2)::after {
+          bottom: 85px;
+          right: 40px;
+          -webkit-transform: rotate(60deg);
+          -ms-transform: rotate(60deg);
+          transform: rotate(60deg); }
       .numbers ul li:nth-child(3) {
         left: 50%;
         bottom: 0;
         margin-left: -0.75em; }
+        .numbers ul li:nth-child(3)::before {
+          bottom: 30px;
+          right: 90px;
+          -webkit-transform: rotate(30deg);
+          -ms-transform: rotate(30deg);
+          transform: rotate(30deg); }
+        .numbers ul li:nth-child(3)::after {
+          bottom: 30px;
+          left: 90px;
+          -webkit-transform: rotate(-30deg);
+          -ms-transform: rotate(-30deg);
+          transform: rotate(-30deg); }
       .numbers ul li:last-child {
         top: 50%;
         left: 0;
         margin-top: -0.75em; }
+        .numbers ul li:last-child::before {
+          top: 85px;
+          left: 40px;
+          -webkit-transform: rotate(60deg);
+          -ms-transform: rotate(60deg);
+          transform: rotate(60deg); }
+        .numbers ul li:last-child::after {
+          bottom: 85px;
+          left: 40px;
+          -webkit-transform: rotate(-60deg);
+          -ms-transform: rotate(-60deg);
+          transform: rotate(-60deg); }

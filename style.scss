@@ -1,6 +1,6 @@
 $bl: #292F33;
 $gr: #8899a6;
-$hr:#55acee;
+$blue:#55acee;
 $hr1:hsla(206, 30%, 63%, 0.2);
 $hr2:hsla(206, 82%, 30%, 0.2);
 %flex {
@@ -27,9 +27,9 @@ body {
     @extend %flex;
     width: 350px;
     height: 350px;
-    // background: url(clock.png) no-repeat center / cover;
+    // background: url(clock.png) no-repeat center / cover; // шаблон циферблата
     border-radius: 50%;
-    border: 8px solid $hr;
+    border: 8px solid $blue;
     box-shadow: 0 -15px 15px $hr1, inset 0 -15px 15px $hr1, 0 15px 15px $hr2, inset 0 15px 15px $hr2;
     &::before {
         content: '';
@@ -39,6 +39,7 @@ body {
         background: $gr;
         border-radius: 50%;
         z-index: 100;
+        border: 2px solid $bl;
     }
 }
 
@@ -81,7 +82,7 @@ body {
     position: absolute;
     width: 8px;
     height: 80px;
-    background: $hr;
+    background: $blue;
     border-radius: 6px 6px 0 0;
     z-index: 10;
 }
@@ -109,7 +110,6 @@ body {
 .numbers {
     width: 320px;
     height: 310px;
-    @extend %flex;
     ul {
         list-style: none;
         li {
@@ -123,25 +123,73 @@ body {
             line-height: 1.5em;
             font-size: 2em;
             color: $gr;
+            &::before,
+            &::after {
+                content: '';
+                width: 2px;
+                height: 14px;
+                background: $gr;
+                position: absolute;
+            }
             &:first-child {
                 top: 0;
                 left: 50%;
                 margin-left: -0.75em;
+                &::before {
+                    top: 30px;
+                    right: 90px;
+                    transform: rotate(-30deg);
+                }
+                &::after {
+                    top: 30px;
+                    left: 90px;
+                    transform: rotate(30deg);
+                }
             }
             &:nth-child(2) {
                 top: 50%;
                 right: 0;
                 margin-top: -0.75em;
+                &::before {
+                    top: 85px;
+                    right: 40px;
+                    transform: rotate(-60deg);
+                }
+                &::after {
+                    bottom: 85px;
+                    right: 40px;
+                    transform: rotate(60deg);
+                }
             }
             &:nth-child(3) {
                 left: 50%;
                 bottom: 0;
                 margin-left: -0.75em;
+                &::before {
+                    bottom: 30px;
+                    right: 90px;
+                    transform: rotate(30deg);
+                }
+                &::after {
+                    bottom: 30px;
+                    left: 90px;
+                    transform: rotate(-30deg);
+                }
             }
             &:last-child {
                 top: 50%;
                 left: 0;
                 margin-top: -0.75em;
+                &::before {
+                    top: 85px;
+                    left: 40px;
+                    transform: rotate(60deg);
+                }
+                &::after {
+                    bottom: 85px;
+                    left: 40px;
+                    transform: rotate(-60deg);
+                }
             }
         }
     }
