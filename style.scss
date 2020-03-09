@@ -17,7 +17,9 @@ $hr2:hsla(206, 82%, 30%, 0.2);
 
 body {
     @extend %flex;
-    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    // overflow: hidden;
     background: $bl;
 }
 
@@ -25,7 +27,7 @@ body {
     @extend %flex;
     width: 350px;
     height: 350px;
-    background: url(clock.png) no-repeat center / cover;
+    // background: url(clock.png) no-repeat center / cover;
     border-radius: 50%;
     border: 8px solid $hr;
     box-shadow: 0 -15px 15px $hr1, inset 0 -15px 15px $hr1, 0 15px 15px $hr2, inset 0 15px 15px $hr2;
@@ -40,6 +42,7 @@ body {
     }
 }
 
+.numbers,
 .hour,
 .min,
 .sec {
@@ -101,4 +104,45 @@ body {
     background: $gr;
     border-radius: 6px 6px 0 0;
     z-index: 12;
+}
+
+.numbers {
+    width: 320px;
+    height: 310px;
+    @extend %flex;
+    ul {
+        list-style: none;
+        li {
+            position: absolute;
+            // font-size: 36px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            width: 1.5em;
+            height: 1.5em;
+            text-align: center;
+            line-height: 1.5em;
+            font-size: 2em;
+            color: $gr;
+            &:first-child {
+                top: 0;
+                left: 50%;
+                margin-left: -0.75em;
+            }
+            &:nth-child(2) {
+                top: 50%;
+                right: 0;
+                margin-top: -0.75em;
+            }
+            &:nth-child(3) {
+                left: 50%;
+                bottom: 0;
+                margin-left: -0.75em;
+            }
+            &:last-child {
+                top: 50%;
+                left: 0;
+                margin-top: -0.75em;
+            }
+        }
+    }
 }
