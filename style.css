@@ -20,6 +20,7 @@ body, .clock, .hr,
 body {
   height: 100vh;
   width: 100%;
+  overflow: hidden;
   background: #292F33; }
 
 .clock {
@@ -34,7 +35,7 @@ body {
     position: absolute;
     width: 15px;
     height: 15px;
-    background: #8899a6;
+    background: #E1E8ED;
     border-radius: 50%;
     z-index: 100;
     border: 2px solid #292F33; }
@@ -58,7 +59,10 @@ body {
 .sec,
 .sc {
   width: 230px;
-  height: 230px; }
+  height: 230px;
+  -webkit-transition: all 0 ease 0.5s;
+  -o-transition: all 0 ease 0.5s;
+  transition: all 0 ease 0.5s; }
 
 .hr,
 .mn,
@@ -83,7 +87,7 @@ body {
   position: absolute;
   width: 4px;
   height: 90px;
-  background: #8899a6;
+  background: #E1E8ED;
   border-radius: 6px 6px 0 0;
   z-index: 11; }
 
@@ -92,7 +96,7 @@ body {
   position: absolute;
   width: 2px;
   height: 155px;
-  background: #8899a6;
+  background: #E1E8ED;
   border-radius: 6px 6px 0 0;
   z-index: 12; }
 
@@ -110,12 +114,12 @@ body {
       text-align: center;
       line-height: 1.5em;
       font-size: 2em;
-      color: #8899a6; }
+      color: #E1E8ED; }
       .numbers ul li::before, .numbers ul li::after {
         content: '';
         width: 2px;
         height: 14px;
-        background: #8899a6;
+        background: #E1E8ED;
         position: absolute; }
       .numbers ul li:first-child {
         top: 0;

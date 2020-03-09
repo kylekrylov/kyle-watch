@@ -1,5 +1,5 @@
 $bl: #292F33;
-$gr: #8899a6;
+$gr: #E1E8ED;
 $blue:#55acee;
 $hr1:hsla(206, 30%, 63%, 0.2);
 $hr2:hsla(206, 82%, 30%, 0.2);
@@ -19,7 +19,7 @@ body {
     @extend %flex;
     height: 100vh;
     width: 100%;
-    // overflow: hidden;
+    overflow: hidden;
     background: $bl;
 }
 
@@ -66,6 +66,7 @@ body {
 .sc {
     width: 230px;
     height: 230px;
+    transition: all 0 ease 0.5s;
 }
 
 .hr,
@@ -114,7 +115,6 @@ body {
         list-style: none;
         li {
             position: absolute;
-            // font-size: 36px;
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
             width: 1.5em;
